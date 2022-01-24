@@ -23,3 +23,18 @@ spec:
             value: mongouser
           - name: MONGO_INITDB_ROOT_PASSWORD
             value: mongopwd
+
+---
+
+# Service do MongoDB
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb
+spec:
+  selector: 
+    app: mongodb
+  ports:
+  - port: 27017
+  type: ClusterIP
